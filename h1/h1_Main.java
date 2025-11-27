@@ -10,20 +10,10 @@ public class h1_Main {
 	}
 	
 	public static boolean isMirrorArray(int[] a, int[] b){
-		int j = 0;
-		boolean question = false;
-		
-		for(int i = a.length - 1; i >= 0 ; i--) {
-			if (a[i] == b[j]) {
-				question = true;
-				j++;
-			}
-			else {
-				question = false;
-				break;
-			}
-		}
-		return question;
+		if(a.length != b.length) return false; // Zwar nicht explizit angegeben aber man weiß ja nie
+    for(int i = 0; i < a.length; i++) {
+        if(a[i] != b[b.length-1-i]) return false;
+    }
+    return true;
 	}
-
 }
